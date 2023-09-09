@@ -1,6 +1,6 @@
 export const Topbar = () => {
     return (
-        <div className="p-5 h-16 md:h-2/6 w-screen bg-[#1f203a] justify-between align-center flex flex-row">
+        <div className="p-5 h-16 md:h-2/6 min-w-screen bg-[#1f203a] justify-between align-center flex flex-row">
             <div>
                 <span className="font-thin text-slate-300 text-1xl md:text-base sm:text-xs truncate ...">
                     Olá, seja bem-vindo(a) ao meu portfólio!
