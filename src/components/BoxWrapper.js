@@ -2,11 +2,7 @@ import { Box } from "./Box";
 
 export const BoxWrapper = ({ boxes, img, title }) => {
     return (
-        <div className="flex flex-wrap overflow-hidden min-w-full">
-            <div>
-                <Box img={img} title={title}></Box>
-            </div>
-            
+        <div className="grid grid-rows-4 grid-flow-col md:grid-rows-2">                     
             <Box img={img} title={title}></Box>
             <Box img={img} title={title}></Box>
             <Box img={img} title={title}></Box>
@@ -14,7 +10,7 @@ export const BoxWrapper = ({ boxes, img, title }) => {
             <Box img={img} title={title}></Box>
             <Box img={img} title={title}></Box>
             <Box img={img} title={title}></Box>
-
+            <Box img={img} title={title}></Box>
         </div>
     );
 };

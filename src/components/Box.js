@@ -1,20 +1,15 @@
 export const Box = ({ img, title, onClick, alt }) => {
     return (
-        <div className="h-[372px] w-[372px]">
+        <div className="flex justify-center align-center place-items-center h-[375px] w-[375px] md:w-[380px] md:h-[380px]">
+            <div className="absolute">
+                <button className="h-[374px] w-[374px] md:w-[379px] md:h-[379px] transition ase-in-out delay-50 bg-none hover:bg-[#ffa54d] text-white" onClick={onClick}>
+                    <p className="text-3xl">
+                        {title}
+                    </p>
+                </button>
+            </div>
             <div className="">
-                <div className="">
-                    <button className="h-[372px] w-[372px] absolute transition ease-in-out delay-50 bg-none hover:bg-[#ffa54d] text-white" onClick={onClick}>
-                        <div className="justify-center align-center flex">
-                            <p className="text-3xl">
-                                {title}
-                            </p>
-                        </div>
-                    </button>
-                    <div className="">
-                        <img className="h-[372px] w-[372px] object-cover" src={img} alt={alt} />
-                    </div>
-
-                </div>
+                <img className="aspect-square object-cover" src={img} alt={alt} />
             </div>
         </div>
     );
