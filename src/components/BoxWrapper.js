@@ -1,16 +1,15 @@
 import { Box } from "./Box";
 
-export const BoxWrapper = ({ boxes, img, title }) => {
+export const BoxWrapper = ({ boxes }) => {
     return (
-        <div className="grid grid-rows-4 grid-flow-col md:grid-rows-2">                     
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
-            <Box img={img} title={title}></Box>
+        <div className="flex flex-wrap">
+            {boxes.map(function (d, idx) {
+                return (
+                    <div className="grow">
+                    <Box key={idx} img={d.img} title={d.title} href={d.href} />
+                    </div>
+                )
+            })}
         </div>
     );
 };

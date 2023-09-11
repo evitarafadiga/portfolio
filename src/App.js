@@ -1,10 +1,9 @@
 import { ResponsibleCard } from "./components/ResponsibleCard";
 import { Topbar } from "./components/topbar";
 import { BoxWrapper } from "./components/BoxWrapper";
-
-const img = "https://www.loudandquiet.com/files/2016/08/angel-olsen-3-nathanael-wood.jpg";
-const alt = 'a';
-const bg = 'https://media.pitchfork.com/photos/645e91b9cd576a0b9ef7fc02/1:1/w_3000,c_limit/All-Mirrors-2019-Angel-Olsen-Album.jpg';
+import { projects } from "./shared/projects";
+import { gallery } from "./shared/gallery";
+import { background, preview, profilePicture } from "./shared/data";
 
 function App() {
   return (
@@ -19,11 +18,11 @@ function App() {
             <div className="h-1/2 bg-white">
               <div>
                 <div>
-                  <img className="drop-shadow-xl h-56 w-full object-cover md:h-60 md:w-full lg:h-64 lg:w-full" src={bg} alt={alt} />
+                  <img className="drop-shadow-xl h-56 w-full object-cover md:h-60 md:w-full lg:h-64 lg:w-full" src={background.img} alt={background.alt} />
                 </div>
                 <div className="pt-[4px] place-items-center flex justify-center align-center">
                   <div className="absolute h-64 w-64 md:h-96 md:w-96 bg-white rounded-full justify-center align-center flex place-items-center">
-                    <img className="p-1 object-cover rounded-full h-full h-full " src={img} alt={alt} />
+                    <img className="p-1 object-cover rounded-full h-full h-full " src={profilePicture.img} alt={profilePicture.alt} />
                   </div>
                 </div>
               </div>
@@ -34,35 +33,46 @@ function App() {
                 <p>Lázaro </p>&nbsp;
                 <p className="font-bold">Santos</p>
               </div>
-              <div className="px-2 w-[500px] pt-2 text-1xl">
-                Desenvolvedor e arquiteto de software. Já desenvolvi desde jogos e projetos pessoais até
+              <div className="px-2 w-[500px] pt-4 text-1xl text-justify	">
+                Desenvolvedor e arquiteto de software freelancer.
+                Analista de sistemas pós-graduado.
+                Já desenvolvi jogos independentes de projetos pessoais e
+                aplicações diversas utilizando banco de dados relacional
+                e linguagens orientadas a objetos. Fluente em inglês e
+                apaixonado por línguas, estudo atualmente francês e japonês
+                com o objetivo de me tornar poliglota.
+
               </div>
             </div>
           </div>
 
-          <div className="justify-center align-center flex flex-col py-4">
-            <div className="flex flex-row p-8 bg-slate-200 h-2/6">
-              <div className="w-1/2 h-1/2 p-4">
-                <div className="py-2">
-                  <span className="h-2/6 pt-40 md:pt-60 md:text-5xl lowercase text-4xl">
-                    <p>sou um</p>
-                    <p className="font-bold">Programador</p>
-                  </span>
+          <div className="place-items-center flex justify-center align-center flex flex-col py-4">
+            <div className="flex flex-row p-4 bg-slate-200">
+              <div className="flex h-1/2">
+
+                <div className="w-1/2 h-1/2 p-4">
+                  <div className="py-2">
+                    <span className="h-2/6 pt-40 md:pt-60 md:text-5xl lowercase text-4xl">
+                      <p>sou um</p>
+                      <p className="font-bold">Programador</p>
+                    </span>
+                  </div>
+                  <div className="py-4">
+                    <img src={preview[0].img} alt={preview[0].alt} />
+                  </div>
                 </div>
-                <div className="py-4">
-                  <img src={img} alt={alt} />
+                <div className="w-1/2 h-1/2 p-4">
+                  <div className="py-4">
+                    <img src={preview[1].img} alt={preview[1].alt} />
+                  </div>
+                  <div className="py-4 h-24">
+                    <a href="https://github.com/evitarafadiga" className="border border-gray-500 border-2 text-gray-500 px-6 py-2 hover:border-slate-200 justify-center flex align-center w-10/12">
+                      <p className="text-base">ACESSE MEU GITHUB</p>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div className="w-1/2 h-1/2 p-4">
-                <div className="py-4">
-                  <img src={img} alt={alt} />
-                </div>
-                <div className="py-4 h-24">
-                  <button className="border border-gray-500 border-2 text-gray-500 px-6 py-2 hover:border-none">
-                    <p className="text-base">ACESSE MEU GITHUB</p>
-                  </button>
-                </div>
-              </div>
+
             </div>
           </div>
 
@@ -72,29 +82,41 @@ function App() {
                 Projetos
               </span>
             </div>
-            <div className="grid grid-rows-4 grid-flow-col md:grid-rows-2">
-              <div className="p-2">
-                <ResponsibleCard img={img} alt={'A'} title={'a'} subtitle={'a'} href={'#'} desc={'a'} />
-              </div>
-              <div className="p-2">
-                <ResponsibleCard img={img} alt={'A'} title={'a'} subtitle={'a'} href={'#'} desc={'a'} />
-              </div>
-              <div className="p-2">
-                <ResponsibleCard img={img} alt={'A'} title={'a'} subtitle={'a'} href={'#'} desc={'a'} />
-              </div>
-              <div className="p-2">
-                <ResponsibleCard img={img} alt={'A'} title={'a'} subtitle={'a'} href={'#'} desc={'a'} />
-              </div>
+
+            <div className="grid grid-cols-1 grid-flow-row md:grid-cols-2">
+
+              {projects.map(function (d, idx) {
+                return (
+                  <div className="p-2">
+                    <ResponsibleCard key={idx} img={d.img} alt={d.alt} title={d.title} subtitle={d.subtitle} href={d.href} desc={d.desc} />
+                  </div>
+                )
+              })}
             </div>
           </div>
 
-          <div className="py-4">
-            <BoxWrapper img={img} title={'LOREM IPSUM'} />
+          <div className="flex justify-center align-center flex-col py-4">
+            <div className="flex place-items-center flex-row bg-slate-200">
+              <div className="py-4">
+                <span className="h-2/6 pt-40 md:pt-60 md:text-5xl lowercase text-4xl">
+                  <p>e sou também</p>
+                  <p className="font-bold">ilustrador</p>
+                  <p>nas horas vagas</p>
+                </span>
+                <div className="py-4">
+                  <BoxWrapper boxes={gallery} />
+                </div>
+              </div>
+
+            </div>
           </div>
+
           <div className="py-4 place-items-center flex align-center justify-center">
-            <button className="bg-[#ffa54d] py-2 px-8 font-bold text-white">
-              VER MAIS
-            </button>
+            <a href="https://www.instagram.com/vinithewalker/">
+              <button className="bg-[#ffa54d] py-2 px-8 font-bold text-white">
+                VER MAIS
+              </button>
+            </a>
           </div>
         </div>
 
