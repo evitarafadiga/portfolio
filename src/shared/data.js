@@ -24,5 +24,12 @@ export const preview = [
         id: 1,
         img: 'https://i.imgur.com/ZcGdHwR.png',
         alt: 'Exemplos de landing pages e diagramas',
+    },
+    {
+        id: 2,
+        img: 'https://raw.githubusercontent.com/evitarafadiga/chuva-inc.github.io/refs/heads/main/src/public/preview.png',
+        title: 'Site 13 Slaca',
+        href: 'https://github.com/evitarafadiga/chuva-inc.github.io',
+        alt: 'Réplica de site usando Svelte Kit + tailwindcss',
     }
 ];

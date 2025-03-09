@@ -12,9 +12,9 @@ export const ResponsibleCard = ({ img, title, subtitle, desc, alt, href }) => {
                     </div>
                     <div className="flex flex-row pt-10 uppercase tracking-wide text-justify align-center place-items-center">
                         <div>
-                            <p className="text-xs text-slate-400 pr-4">stacks</p>
+                            <p className="text-base text-slate-400 px-8">stacks</p>
                         </div>
-                        <div className="text-sm text-indigo-500 font-semibold">{title}
+                        <div className="text-xl text-indigo-500 font-semibold">{title.replace(new RegExp(" ","gm")," • ")}
                         </div>
                     </div>
                 </div>
